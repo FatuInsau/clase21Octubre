@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.caja {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    padding: 20px 60px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(105, 195, 165);
+    /* transition: padding 3s, background-color 1s; */
+    transition: all 2s;
+}
+
+/* transicion --> hace que el cambio sea más lento */
+
+.boton:hover {
+    padding: 30px 90px;
+    background-color: coral;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: aquamarine;
+}
+
+li{
+    transition: all 500ms;
+}
+
+li:hover {
+    color: aliceblue;
+    transform: scale(1.5);
+}
+
+/* transform --> tiene un par de animaciones para utilizar */
+/* scale --> le pasamos un numero y multiplica el tamaño del elemento por ese numero */
+/* translate --> nos permite transladar un elemento */
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+img {
+    width: 250px;
+}
+
+.contenedor div {
+    border: 1px solid gray;
+    width: 250px;
+    position: relative;
+}
+
+span {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    opacity: 0;
+}
+
+.contenedor div:hover span  {
+    /* utilizamos las animaciones que creamos */
+    animation: bajando 300ms linear forwards;
+}
+
+/* creamos nuestra propia animacion */
+@keyframes bajando {
+    /* al inicio de la animacion quiero que este así */
+    0% {
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    /* al final de la animacion quiero que se cumpla esto */
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
